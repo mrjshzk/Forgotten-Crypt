@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6tvkcgbi0k08"]
+
+[ext_resource type="PackedScene" uid="uid://dbwvabkkwscjm" path="res://src/ui/ui.tscn" id="1_w8yen"]
+[ext_resource type="PackedScene" uid="uid://buk8x5otyx6ls" path="res://src/pause/pause_menu.tscn" id="2_wkg65"]
+[ext_resource type="PackedScene" uid="uid://b0ppb4xexq767" path="res://src/world/floor_1.tscn" id="3_eh4pi"]
+
+[node name="Node" type="Node"]
+
+[node name="Floor1" parent="." instance=ExtResource("3_eh4pi")]
+
+[node name="UI" parent="." instance=ExtResource("1_w8yen")]
+
+[node name="Pause Menu" parent="." instance=ExtResource("2_wkg65")]
+visible = false

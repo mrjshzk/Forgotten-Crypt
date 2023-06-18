@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://df2xmw3phhri"]
+
+[ext_resource type="Script" path="res://src/world/game.gd" id="1_h0qyt"]
+[ext_resource type="Shader" path="res://src/psx/shaders/pp_band-dither.gdshader" id="1_privk"]
+[ext_resource type="Texture2D" uid="uid://diakxlqisokx5" path="res://src/psx/shaders/psxdither.png" id="2_ne8ev"]
+[ext_resource type="PackedScene" uid="uid://b0ppb4xexq767" path="res://src/world/floor_1.tscn" id="2_yhey1"]
+[ext_resource type="PackedScene" uid="uid://dbwvabkkwscjm" path="res://src/ui/ui.tscn" id="3_kc1tx"]
+[ext_resource type="Shader" path="res://src/psx/shaders/crt.gdshader" id="5_gkkyx"]
+[ext_resource type="PackedScene" uid="uid://buk8x5otyx6ls" path="res://src/pause/pause_menu.tscn" id="6_hrh5h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nml65"]
+render_priority = 0
+shader = ExtResource("1_privk")
+shader_parameter/col_depth = 18.0
+shader_parameter/dither_banding = true
+shader_parameter/dither_tex = ExtResource("2_ne8ev")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_55g2h"]
+shader = ExtResource("5_gkkyx")
+shader_parameter/shake = 0.004
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.05
+shader_parameter/colorOffsetIntensity = 0.1
+
+[node name="Game" type="SubViewportContainer"]
+material = SubResource("ShaderMaterial_nml65")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = ExtResource("1_h0qyt")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="Floor1" parent="SubViewport" instance=ExtResource("2_yhey1")]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport"]
+material = SubResource("ShaderMaterial_55g2h")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" parent="." instance=ExtResource("3_kc1tx")]
+layout_mode = 2
+
+[node name="Pause Menu" parent="." instance=ExtResource("6_hrh5h")]
+visible = false
+layout_mode = 2
+
+[node name="Notifications" type="Node" parent="."]

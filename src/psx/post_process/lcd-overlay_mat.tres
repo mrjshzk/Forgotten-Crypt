@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bni0eo5gi5ho4"]
+
+[ext_resource type="Shader" path="res://src/psx/shaders/lcd_post_process.gdshader" id="1_f4fhc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_f4fhc")
+shader_parameter/enabled = true
+shader_parameter/lcd_opacity = 0.5
+shader_parameter/scanline_gap = 5

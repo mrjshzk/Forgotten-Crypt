@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b6irksunrvdek"]
+
+[ext_resource type="Shader" path="res://src/psx/shaders/post_process_blur.gdshader" id="1_plxyv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_plxyv")
+shader_parameter/blur_scale = Vector2(0.5, 0.5)
+shader_parameter/blur_samples = 50.0
+shader_parameter/blur_brightness = 1.65
+shader_parameter/enabled = true

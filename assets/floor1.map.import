@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://c6eifb7shm6g2"
+path="res://.godot/imported/floor1.map-e06c2ba5375b33d6ab33eb6f61eb8ec3.tres"
+
+[deps]
+
+source_file="res://assets/floor1.map"
+dest_files=["res://.godot/imported/floor1.map-e06c2ba5375b33d6ab33eb6f61eb8ec3.tres"]
+
+[params]
+
