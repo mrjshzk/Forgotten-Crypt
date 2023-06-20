@@ -25,8 +25,9 @@ SoundManager="*res://addons/sound_manager/sound_manager.tscn"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/size/viewport_width=427
+window/size/viewport_height=320
+window/size/mode=4
 window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720

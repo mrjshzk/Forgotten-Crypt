@@ -12,11 +12,10 @@ func _process(_delta):
 
 func _on_area_3d_body_entered(body):
 	if body is CharacterBody3D:
-		pickup_sound.play(0)
-		print("im getting collected!")
-		SoundManager.play_sound(sound)
 		Singleton.collected += 1
-		Singleton.notif("vai ta foder " + OS.get_environment("USERNAME"))
+		Singleton.notif(str(Singleton.collected) + " of 5 collected.")
+		pickup_sound.play()
+		print("im getting collected!")
 		self.queue_free()
 		
 		

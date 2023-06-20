@@ -20,11 +20,13 @@ const FOV_CHANGE = 1.5
 var gravity = 9.8
 var last_num := 1
 var num_range := [1,2,3]
+var first_stamina_depletion := true
 
 @onready var head := $Head
 @onready var camera := $Head/Camera
 @onready var raycast := $Head/Camera/RayCast3D
 @onready var timer = $Timer
+@onready var footstep = $AudioStreamPlayer3D
 
 
 func _ready():
@@ -41,6 +43,9 @@ func _input(event: InputEvent):
 
 func _process(_delta):
 	await Singleton.stamina_reached_zero
+	if first_stamina_depletion:
+		first_stamina_depletion = false
+		Singleton.notif("When stamina is depleted, you must wait \n" + str(Singleton.stamina_cooldown) + " second to run again.", 4)
 	can_run = false
 	timer.start(Singleton.stamina_cooldown)
 	await timer.timeout
@@ -115,9 +120,12 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
 
-func walk():
+func walk(range_1 = 0, range_2 = 5):
 	var sound_path := "res://assets/audio/footsteps/" + str(num_range.pick_random()) + ".wav"
 	var footstep_sound = load(sound_path)
+	footstep.set_volume_db(randf_range(range_1, range_2))
+	footstep.set_stream(footstep_sound)
+	footstep.set_pitch_scale(randf_range(0.85,1.15))
 	print(sound_path)
-	SoundManager.play_sound(footstep_sound, "footstep")
+	footstep.play()
 	

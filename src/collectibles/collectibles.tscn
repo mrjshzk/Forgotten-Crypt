@@ -47,7 +47,7 @@ _data = {
 script = ExtResource("1_8qutn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.935496, 0.124847, -0.330546, 0, -0.935495, -0.353337, -0.353337, -0.330545, 0.875153, 0, 0, 0)
+transform = Transform3D(-0.59799, 0.642407, -0.479291, 0, -0.59799, -0.801503, -0.801503, -0.479291, 0.357593, 0, 0, 0)
 material_overlay = SubResource("ShaderMaterial_iqljy")
 mesh = SubResource("SphereMesh_7tdx8")
 

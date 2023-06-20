@@ -8,7 +8,7 @@ height = 1.7
 
 [sub_resource type="Animation" id="Animation_h21v8"]
 resource_name = "run"
-length = 0.35
+length = 0.4
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +16,10 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
+"args": [5.0, 7.5],
 "method": &"walk"
 }]
 }
@@ -65,7 +65,6 @@ fov = 90.0
 target_position = Vector3(0, 0, -1.5)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera"]
-visible = false
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 spot_range = 7.5
@@ -77,3 +76,5 @@ spot_angle = 37.5
 libraries = {
 "": SubResource("AnimationLibrary_hiojm")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
