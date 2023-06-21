@@ -15,7 +15,6 @@ func _on_area_3d_body_entered(body):
 		Singleton.collected += 1
 		Singleton.notif(str(Singleton.collected) + " of 5 collected.")
 		pickup_sound.play()
-		print("im getting collected!")
 		self.queue_free()
 		
 		

@@ -82,10 +82,12 @@ func _physics_process(delta):
 				$AnimationPlayer.play("walk")
 				Singleton.stamina = clamp(Singleton.stamina + 1, 0, Singleton.max_stamina)
 		else:
+			$AnimationPlayer.play("idle")
 			Singleton.stamina = clamp(Singleton.stamina + 1, 0, Singleton.max_stamina)
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
 	else:
+		#$AnimationPlayer.play("idle")
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 	
@@ -126,6 +128,5 @@ func walk(range_1 = 0, range_2 = 5):
 	footstep.set_volume_db(randf_range(range_1, range_2))
 	footstep.set_stream(footstep_sound)
 	footstep.set_pitch_scale(randf_range(0.85,1.15))
-	print(sound_path)
 	footstep.play()
 	
