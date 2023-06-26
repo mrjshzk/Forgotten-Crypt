@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://210w30ydl5tv"]
+
+[ext_resource type="Texture2D" uid="uid://doady1feacj2b" path="res://assets/textures/star_04.png" id="1_isht0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsu1a"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_isht0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ckcoy"]
+material = SubResource("StandardMaterial3D_bsu1a")
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+draw_pass_1 = SubResource("QuadMesh_ckcoy")

@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var speed
 var can_run := true
-const WALK_SPEED = 4.0
+const WALK_SPEED = 4.5
 const SPRINT_SPEED = 6.5
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
@@ -22,15 +22,24 @@ var last_num := 1
 var num_range := [1,2,3]
 var first_stamina_depletion := true
 
+# footstep paths
+var footsteps := [preload("res://assets/audio/footsteps/1.ogg"), 
+				preload("res://assets/audio/footsteps/2.ogg"), 
+				preload("res://assets/audio/footsteps/3.ogg")]
+
+
+
+
 @onready var head := $Head
 @onready var camera := $Head/Camera
 @onready var raycast := $Head/Camera/RayCast3D
 @onready var timer = $Timer
-@onready var footstep = $AudioStreamPlayer3D
+@onready var audio_player = $AudioStreamPlayer3D
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Singleton.connect("stamina_reached_zero", apply_stamina_cooldown)
 
 func _input(event: InputEvent):
 	if Input.is_action_just_pressed("interact"):
@@ -41,15 +50,6 @@ func _input(event: InputEvent):
 		camera.rotate_x(-event.relative.y * SENSITIVITY * Singleton.mouse_sens)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
-func _process(_delta):
-	await Singleton.stamina_reached_zero
-	if first_stamina_depletion:
-		first_stamina_depletion = false
-		Singleton.notif("When stamina is depleted, you must wait \n" + str(Singleton.stamina_cooldown) + " second to run again.", 4)
-	can_run = false
-	timer.start(Singleton.stamina_cooldown)
-	await timer.timeout
-	can_run = true
 
 func _physics_process(delta):
 	check_cursor()
@@ -57,7 +57,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
 #	# Handle Jump.
 #	if Input.is_action_just_pressed("jump") and is_on_floor():
 #		velocity.y = JUMP_VELOCITY
@@ -123,10 +122,18 @@ func _headbob(time) -> Vector3:
 	return pos
 
 func walk(range_1 = 0, range_2 = 5):
-	var sound_path := "res://assets/audio/footsteps/" + str(num_range.pick_random()) + ".wav"
-	var footstep_sound = load(sound_path)
-	footstep.set_volume_db(randf_range(range_1, range_2))
-	footstep.set_stream(footstep_sound)
-	footstep.set_pitch_scale(randf_range(0.85,1.15))
-	footstep.play()
+	audio_player.set_volume_db(randf_range(range_1, range_2))
+	audio_player.set_stream(footsteps.pick_random())
+	audio_player.set_pitch_scale(randf_range(0.85,1.15))
+	audio_player.play()
 	
+
+
+func apply_stamina_cooldown():
+	if first_stamina_depletion:
+		first_stamina_depletion = false
+		Singleton.notif("When stamina is depleted, you must wait \n" + str(Singleton.stamina_cooldown) + " second to run again.")
+	can_run = false
+	timer.start(Singleton.stamina_cooldown)
+	await timer.timeout
+	can_run = true

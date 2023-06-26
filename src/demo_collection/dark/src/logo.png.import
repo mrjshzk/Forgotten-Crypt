@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://clb744vna7l14"
+path="res://.godot/imported/logo.png-7015a2ad1bcd9072ad2593418307df6f.image"
+
+[deps]
+
+source_file="res://src/demo_collection/dark/src/logo.png"
+dest_files=["res://.godot/imported/logo.png-7015a2ad1bcd9072ad2593418307df6f.image"]
+
+[params]
+

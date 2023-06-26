@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkxspxk11qvfg"]
+[gd_scene load_steps=8 format=3 uid="uid://bkxspxk11qvfg"]
 
 [ext_resource type="Script" path="res://src/door/door.gd" id="1_5s6od"]
 [ext_resource type="Texture2D" uid="uid://c1dw0diofyryi" path="res://assets/textures/plaster.png" id="1_fe57r"]
 [ext_resource type="Texture2D" uid="uid://o6fo2qs3l1q0" path="res://assets/textures/door.png" id="2_n3jh6"]
-[ext_resource type="AudioStream" uid="uid://73ankmwj35v4" path="res://assets/audio/431117__inspectorj__door-front-opening-a.wav" id="4_3lfk0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b77iq"]
 albedo_texture = ExtResource("1_fe57r")
@@ -54,6 +53,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
 shape = SubResource("ConcavePolygonShape3D_0c74t")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.807977)
-stream = ExtResource("4_3lfk0")
-bus = &"footstep"

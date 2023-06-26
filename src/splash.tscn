@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpb3igvbe3l1c"]
+
+[ext_resource type="Script" path="res://addons/awesome_splash/core/SplashContainer.gd" id="1_l4f5l"]
+[ext_resource type="PackedScene" uid="uid://bcf2o7f8h4yhn" path="res://src/main_menu/main_menu.tscn" id="2_4t3pk"]
+[ext_resource type="PackedScene" uid="uid://c1a6h17cr3guq" path="res://src/demo_collection/fire/splash_screen.tscn" id="3_1dbv3"]
+
+[node name="Node" type="Node2D"]
+script = ExtResource("1_l4f5l")
+custom_node/type = 0
+custom_node/default_time = 1.0
+skip/type = 0
+move_to_scene = ExtResource("2_4t3pk")
+trainsition_type = 5
+min_pixel = 1.0
+max_pixel = 128.0
+transition_time = 2.0
+
+[node name="SplashFire" parent="." instance=ExtResource("3_1dbv3")]
+duration = 4.0

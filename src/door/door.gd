@@ -1,4 +1,5 @@
 extends Node3D
+class_name Door3D
 
 var is_opened : bool = false
 var can_move : bool = true
@@ -7,6 +8,10 @@ var send_locked_notif : bool = false
 var open_door_time := 1.0
 
 @onready var audio_stream_player_3d := $AudioStreamPlayer3D
+var door_sound := preload("res://assets/audio/431117__inspectorj__door-front-opening-a.ogg")
+
+func _ready():
+	audio_stream_player_3d.set_stream(door_sound)
 
 func interact():
 	if not locked:
@@ -23,8 +28,7 @@ func open_door():
 		is_opened = true
 		var tween = create_tween()
 		audio_stream_player_3d.play()
-		@warning_ignore("int_as_enum_without_cast")
-		tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y+90, open_door_time).set_trans(4).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y+90, open_door_time).set_ease(Tween.EASE_IN_OUT)
 		can_move = false
 		
 		await get_tree().create_timer(open_door_time).timeout
@@ -36,8 +40,7 @@ func close_door():
 		is_opened = false
 		var tween = create_tween()
 		audio_stream_player_3d.play()
-		@warning_ignore("int_as_enum_without_cast")
-		tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y-90, open_door_time).set_trans(4).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y-90, open_door_time).set_ease(Tween.EASE_IN_OUT)
 		can_move = false
 		
 		await get_tree().create_timer(open_door_time).timeout

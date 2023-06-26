@@ -10,28 +10,35 @@ config_version=5
 
 [application]
 
-config/name="game"
-run/main_scene="res://src/world/game.tscn"
-config/features=PackedStringArray("4.0", "C#", "Forward Plus")
+config/name="Forgotten Crypt"
+config/description="Horror game made in Godot 4 by hazoky."
+run/main_scene="res://src/splash.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
 run/max_fps=300
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="res://vibes.png"
+config/windows_native_icon="res://vibes.ico"
 
 [autoload]
 
 Singleton="*res://src/singleton.gd"
 SoundManager="*res://addons/sound_manager/sound_manager.tscn"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+DiscordSDKLoader="*res://addons/discord-sdk-gd/nodes/core_updater.gd"
+sp="*res://addons/awesome_splash/utils_splash.gd"
+gd="*res://addons/godot-action/utils_gd_action.tscn"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
 [display]
 
 window/size/viewport_width=427
 window/size/viewport_height=320
 window/size/mode=4
-window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+window/vsync/vsync_mode=3
 
 [dotnet]
 
@@ -44,7 +51,7 @@ movie_writer/movie_file="C:/Users/mrjshzk/Documents/game/src/main_menu/video.avi
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/sound_manager/plugin.cfg", "res://addons/qodot/plugin.cfg")
+enabled=PackedStringArray("res://addons/sound_manager/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/discord-sdk-gd/plugin.cfg", "res://addons/godotsize/plugin.cfg", "res://addons/awesome_splash/plugin.cfg", "res://addons/godot-action/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [input]
 
@@ -74,8 +81,7 @@ jump={
 }
 sprint={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"echo":false,"script":null)
-]
+"events": []
 }
 look_left={
 "deadzone": 0.5,
@@ -114,3 +120,4 @@ textures/canvas_textures/default_texture_filter=0
 textures/default_filters/use_nearest_mipmap_filter=true
 textures/decals/filter=2
 textures/light_projectors/filter=2
+anti_aliasing/quality/msaa_3d=2

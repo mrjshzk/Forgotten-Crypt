@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=3 uid="uid://dut0jdsyyrblu"]
+
+[ext_resource type="Texture2D" uid="uid://dql5m3psc031f" path="res://assets/models/vhs_mega_set_fbx_v1_0.png" id="1_6lm80"]
+[ext_resource type="Script" path="res://src/collectibles/collectibles.gd" id="1_k6q7u"]
+[ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="2_g25jp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ohew"]
+render_priority = 0
+shader = ExtResource("2_g25jp")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k4vl"]
+resource_name = "TapeA5"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_6lm80")
+metallic = 0.981
+roughness = 0.257
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hethh"]
+_surfaces = [{
+"aabb": AABB(5.635, 2.4153, -0.720731, 2.93102, 1.96121, 0.432749),
+"format": 4097,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0, 4, 0, 6, 0, 5, 0, 4, 0, 7, 0, 6, 0, 0, 0, 7, 0, 4, 0, 0, 0, 1, 0, 7, 0, 1, 0, 6, 0, 7, 0, 1, 0, 2, 0, 6, 0, 2, 0, 5, 0, 6, 0, 2, 0, 3, 0, 5, 0, 4, 0, 3, 0, 0, 0, 4, 0, 5, 0, 3, 0),
+"name": "TapeA5",
+"primitive": 3,
+"vertex_count": 8,
+"vertex_data": PackedByteArray(96, 14, 9, 65, 67, 148, 26, 64, 213, 129, 56, 191, 237, 81, 180, 64, 67, 148, 26, 64, 213, 129, 56, 191, 237, 81, 180, 64, 95, 12, 140, 64, 213, 129, 56, 191, 98, 14, 9, 65, 95, 12, 140, 64, 213, 129, 56, 191, 96, 14, 9, 65, 67, 148, 26, 64, 101, 114, 147, 190, 98, 14, 9, 65, 95, 12, 140, 64, 101, 114, 147, 190, 237, 81, 180, 64, 95, 12, 140, 64, 135, 114, 147, 190, 235, 81, 180, 64, 71, 148, 26, 64, 101, 114, 147, 190)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8a4xm"]
+resource_name = "Sketchfab_Scene_VHSTapeWithCase003_TapeA5_0"
+_surfaces = [{
+"aabb": AABB(5.635, 2.4153, -0.720731, 2.93102, 1.96121, 0.432749),
+"attribute_data": PackedByteArray(133, 64, 143, 62, 159, 6, 126, 61, 87, 242, 146, 62, 42, 20, 233, 62, 225, 37, 147, 61, 42, 20, 233, 62, 249, 44, 143, 61, 8, 181, 135, 61, 52, 215, 167, 62, 18, 11, 37, 63, 24, 185, 1, 63, 146, 76, 36, 63, 29, 190, 1, 63, 181, 151, 121, 63, 109, 164, 167, 62, 29, 159, 120, 63, 154, 217, 113, 63, 213, 231, 8, 63, 154, 217, 113, 63, 134, 206, 253, 62, 69, 101, 35, 63, 89, 57, 255, 62, 69, 101, 35, 63, 63, 157, 9, 63, 134, 148, 86, 63, 229, 129, 190, 60, 214, 207, 102, 63, 130, 89, 170, 60, 1, 99, 104, 63, 242, 63, 153, 62, 125, 140, 88, 63, 55, 225, 153, 62, 175, 28, 217, 62, 15, 155, 17, 63, 135, 71, 217, 62, 82, 111, 30, 63, 111, 244, 7, 60, 90, 59, 29, 63, 99, 50, 22, 60, 247, 102, 17, 63, 77, 219, 15, 63, 9, 92, 244, 62, 201, 134, 15, 63, 68, 9, 11, 63, 20, 12, 142, 62, 13, 69, 11, 63, 34, 205, 141, 62, 191, 14, 244, 62),
+"format": 4119,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0, 4, 0, 6, 0, 5, 0, 4, 0, 7, 0, 6, 0, 8, 0, 10, 0, 9, 0, 8, 0, 11, 0, 10, 0, 12, 0, 14, 0, 13, 0, 12, 0, 15, 0, 14, 0, 16, 0, 18, 0, 17, 0, 16, 0, 19, 0, 18, 0, 20, 0, 22, 0, 21, 0, 20, 0, 23, 0, 22, 0),
+"material": SubResource("StandardMaterial3D_7k4vl"),
+"name": "TapeA5",
+"primitive": 3,
+"vertex_count": 24,
+"vertex_data": PackedByteArray(96, 14, 9, 65, 67, 148, 26, 64, 213, 129, 56, 191, 255, 255, 255, 255, 181, 126, 90, 127, 237, 81, 180, 64, 67, 148, 26, 64, 213, 129, 56, 191, 255, 255, 255, 255, 255, 127, 254, 127, 237, 81, 180, 64, 95, 12, 140, 64, 213, 129, 56, 191, 255, 255, 255, 255, 56, 127, 155, 127, 98, 14, 9, 65, 95, 12, 140, 64, 213, 129, 56, 191, 255, 255, 255, 255, 241, 125, 248, 126, 96, 14, 9, 65, 67, 148, 26, 64, 101, 114, 147, 190, 255, 127, 255, 127, 202, 127, 26, 0, 98, 14, 9, 65, 95, 12, 140, 64, 101, 114, 147, 190, 255, 127, 255, 127, 89, 126, 210, 0, 237, 81, 180, 64, 95, 12, 140, 64, 135, 114, 147, 190, 255, 127, 255, 127, 193, 128, 96, 0, 235, 81, 180, 64, 71, 148, 26, 64, 101, 114, 147, 190, 255, 127, 255, 127, 46, 130, 23, 1, 96, 14, 9, 65, 67, 148, 26, 64, 213, 129, 56, 191, 255, 127, 0, 0, 254, 255, 85, 191, 96, 14, 9, 65, 67, 148, 26, 64, 101, 114, 147, 190, 255, 127, 0, 0, 254, 255, 85, 191, 235, 81, 180, 64, 71, 148, 26, 64, 101, 114, 147, 190, 255, 127, 0, 0, 254, 255, 85, 191, 237, 81, 180, 64, 67, 148, 26, 64, 213, 129, 56, 191, 255, 127, 0, 0, 254, 255, 85, 191, 237, 81, 180, 64, 67, 148, 26, 64, 213, 129, 56, 191, 0, 0, 255, 127, 255, 127, 178, 61, 235, 81, 180, 64, 71, 148, 26, 64, 101, 114, 147, 190, 0, 0, 255, 127, 255, 127, 136, 61, 237, 81, 180, 64, 95, 12, 140, 64, 135, 114, 147, 190, 0, 0, 255, 127, 255, 127, 145, 62, 237, 81, 180, 64, 95, 12, 140, 64, 213, 129, 56, 191, 0, 0, 255, 127, 255, 127, 188, 62, 237, 81, 180, 64, 95, 12, 140, 64, 213, 129, 56, 191, 255, 127, 255, 255, 0, 0, 48, 63, 237, 81, 180, 64, 95, 12, 140, 64, 135, 114, 147, 190, 255, 127, 255, 255, 0, 0, 32, 63, 98, 14, 9, 65, 95, 12, 140, 64, 101, 114, 147, 190, 255, 127, 255, 255, 0, 0, 197, 63, 98, 14, 9, 65, 95, 12, 140, 64, 213, 129, 56, 191, 255, 127, 255, 255, 0, 0, 214, 63, 96, 14, 9, 65, 67, 148, 26, 64, 101, 114, 147, 190, 254, 255, 255, 127, 178, 127, 254, 127, 96, 14, 9, 65, 67, 148, 26, 64, 213, 129, 56, 191, 254, 255, 255, 127, 155, 127, 254, 127, 98, 14, 9, 65, 95, 12, 140, 64, 213, 129, 56, 191, 254, 255, 255, 127, 255, 127, 235, 127, 98, 14, 9, 65, 95, 12, 140, 64, 101, 114, 147, 190, 254, 255, 255, 127, 255, 127, 223, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hethh")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ctir0"]
+height = 1.73693
+radius = 0.992174
+
+[sub_resource type="Animation" id="Animation_y3i8y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fdvr0"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.28319, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8pk3"]
+_data = {
+"RESET": SubResource("Animation_y3i8y"),
+"idle": SubResource("Animation_fdvr0")
+}
+
+[node name="Collectible_3" type="Node3D"]
+script = ExtResource("1_k6q7u")
+
+[node name="VHSTapeWithCase003_TapeA5_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.57947, -1.71381, 0.17164)
+material_overlay = SubResource("ShaderMaterial_6ohew")
+mesh = SubResource("ArrayMesh_8a4xm")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241866, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_ctir0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r8pk3")
+}
+next/idle = &"idle"
+blend_times = [&"idle", &"idle", 3600.0]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

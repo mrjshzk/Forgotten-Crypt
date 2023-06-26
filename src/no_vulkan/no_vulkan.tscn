@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://clk0yt3b0kcfb"]
+
+[ext_resource type="Texture2D" uid="uid://5rghwo3aks4p" path="res://assets/textures/44b83c691eff2e0f31ef5e5a80088dd6.jpg" id="1_u2hyh"]
+[ext_resource type="Script" path="res://src/no_vulkan/no_vulkan.gd" id="1_wjhbf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wjhbf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.188235, 0.254902, 1)
+
+[node name="44b83c691Eff2e0f31Ef5e5a80088Dd6" type="Sprite2D" parent="."]
+position = Vector2(327, 91)
+scale = Vector2(0.256, 0.25)
+texture = ExtResource("1_u2hyh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 25.0
+offset_right = 246.0
+offset_bottom = 282.0
+text = "Your computer does not support Vulkan and that means you won't be able to properly play this game without visual bugs and no lighting.
+
+Dont worry, you will be able to play in the future."
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 171.0
+offset_right = 421.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 30
+text = "Quit Game"
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 262.0
+offset_right = 418.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 24
+text = "I Don't Care Let Me Play"
